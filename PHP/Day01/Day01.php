@@ -14,6 +14,11 @@
  * )'s. This would have given the same answer. However, I thought "what if it's some super long string?" Looks like I
  * guessed right. Going through the string char by char I do believe is faster than some sort of string operation/regex
  * twice.
+ *
+ * Part 2:
+ * Find the position of the first character that causes him to enter the basement
+ *
+ * Answer: 1795
 */
 
 //Set input
@@ -21,6 +26,7 @@ $instructions = "((((()(()(((((((()))(((()((((()())(())()(((()((((((()((()(()(((
 
 //Default floor
 $floor = 0;
+$bas_pos = -1;
 for($i = 0; $i < strlen($instructions); $i++){
 	$char = substr($instructions,$i,1);
 	switch(ord($char)){
@@ -34,6 +40,10 @@ for($i = 0; $i < strlen($instructions); $i++){
 			$floor = $floor;
 			break;
 	}
+	if($floor == -1 && $bas_pos == -1){
+		$bas_pos = $i + 1;
+	}
 }
 echo "Santa is now on floor " . $floor."\n";
+echo "He entered the basement at instruction " . $bas_pos . "\n";
 ?>
