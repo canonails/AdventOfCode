@@ -12,3 +12,5 @@ Completed:
 +Day 04 (Parts 2/2): PHP
 
 +Day 05 (Parts 2/2): PHP
+
++Day 06 (Parts 1/2): PHP
